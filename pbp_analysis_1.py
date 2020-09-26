@@ -351,24 +351,19 @@ def main():
     data_17_18 = pd.read_csv('NBA-PBP-2017-2018.csv')
     data_16_17 = pd.read_csv('NBA-PBP-2016-2017.csv')
     data = [data_19_20, data_18_19, data_17_18, data_16_17]
-    # small_data_1 = pd.read_csv('small.txt')
-    # small_data_2 = pd.read_csv('small2.txt')
-    # small_data_3 = pd.read_csv('small3.txt')
-    # small_data_4 = pd.read_csv('small4.txt')
-    # data = [small_data_1, small_data_2, small_data_3, small_data_4]
     ppp_data = [calc_ppp(year) for year in data]
     print(ppp_data)
-    # cleaned_data = [clean_data(year) for year in data]
-    # shot_data = calc_shots(cleaned_data)
-    # rebs_data = calc_rebs(cleaned_data)
-    # exp_pts_data = calc_exp_pts(shot_data)
-    # exp_pts_w_orb_data = calc_exp_pts_w_orb(shot_data, rebs_data, ppp_data)
-    # gen_bar_shots_attempts(shot_data)
-    # gen_bar_shot_percentages(shot_data)
-    # gen_bar_orb_percentages(shot_data, rebs_data)
-    # gen_bar_orbp_off_miss(shot_data, rebs_data)
-    # gen_bar_exp_pts(exp_pts_data)
-    # gen_bar_exp_pts_w_orb(exp_pts_w_orb_data)
+    cleaned_data = [clean_data(year) for year in data]
+    shot_data = calc_shots(cleaned_data)
+    rebs_data = calc_rebs(cleaned_data)
+    exp_pts_data = calc_exp_pts(shot_data)
+    exp_pts_w_orb_data = calc_exp_pts_w_orb(shot_data, rebs_data, ppp_data)
+    gen_bar_shots_attempts(shot_data)
+    gen_bar_shot_percentages(shot_data)
+    gen_bar_orb_percentages(shot_data, rebs_data)
+    gen_bar_orbp_off_miss(shot_data, rebs_data)
+    gen_bar_exp_pts(exp_pts_data)
+    gen_bar_exp_pts_w_orb(exp_pts_w_orb_data)
 
 
 if __name__ == '__main__':
