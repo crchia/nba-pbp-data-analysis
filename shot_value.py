@@ -193,16 +193,6 @@ def calc_exp_pts_w_orb(shots, rebs, ppp):
 
 
 def gen_bar_shots_attempts(shots):
-    # fig = plt.figure()
-    # shot_types = shots.keys()
-    # attempts = np.array([shots[shot_type][0] for shot_type in shots])
-    # plt.bar(shot_types, attempts, color=['b', 'b', 'b', 'b', 'm', 'm', 'm'])
-    # plt.xticks(rotation=30)
-    # plt.xlabel('Shot Type')
-    # plt.ylabel('# Shots Attempted')
-    # plt.title('2019-2020 League Wide \n Shot Type vs. # Shots Attempted')
-    # plt.tight_layout()
-    # fig.savefig('shot_attempts_bar.png')
     fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
     for i in range(len(ax)):
         for j in range(len(ax[0])):
@@ -218,7 +208,6 @@ def gen_bar_shots_attempts(shots):
     fig.savefig('shot_attempts.png')
 
     
-
 def gen_bar_shot_percentages(shots):
     fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
     for i in range(len(ax)):
@@ -239,19 +228,6 @@ def gen_bar_shot_percentages(shots):
 
 
 def gen_bar_orb_percentages(shots, rebs):
-    # fig = plt.figure()
-    # shot_types = shots.keys()
-    # attempts = np.array([shots[shot_type][0] for shot_type in shots])
-    # orbs = np.array([rebs[shot_type] for shot_type in rebs])
-    # orb_percentages = orbs / attempts * 100
-    # plt.bar(shot_types, orb_percentages, color=['b', 'b', 'b', 'b', 'm', 'm', 'm'])
-    # plt.xticks(rotation=30)
-    # plt.xlabel('Shot Type')
-    # plt.ylabel('Offensive Rebounding %')
-    # plt.title('2019-2020 League Wide \n Shot Type vs. Offensive Rebounding %')
-    # plt.tight_layout()
-    # fig.savefig('orb_percentage_of_attempts_bar.png')
-
     fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
     for i in range(len(ax)):
         for j in range(len(ax[0])):
@@ -270,21 +246,6 @@ def gen_bar_orb_percentages(shots, rebs):
 
 
 def gen_bar_orbp_off_miss(shots, rebs):
-    # fig = plt.figure()
-    # shot_types = shots.keys()
-    # attempts = np.array([shots[shot_type][0] for shot_type in shots])
-    # makes = np.array([shots[shot_type][1] for shot_type in shots])
-    # misses = attempts - makes
-    # orbs = np.array([rebs[shot_type] for shot_type in rebs])
-    # orb_percentages = orbs / misses * 100
-    # plt.bar(shot_types, orb_percentages, color=['b', 'b', 'b', 'b', 'm', 'm', 'm'])
-    # plt.xticks(rotation=30)
-    # plt.xlabel('Shot Type')
-    # plt.ylabel('Offensive Rebounding % Off Miss')
-    # plt.title('2019-2020 League Wide \n Shot Type vs. Offensive Rebounding % Off Miss')
-    # plt.tight_layout()
-    # fig.savefig('orb_percentage_of_misses.png')
-
     fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
     for i in range(len(ax)):
         for j in range(len(ax[0])):
@@ -305,17 +266,6 @@ def gen_bar_orbp_off_miss(shots, rebs):
 
 
 def gen_bar_exp_pts(exp_pts):
-    # fig = plt.figure()
-    # shot_types = exp_pts.keys()
-    # exp_pts = exp_pts.values()
-    # plt.bar(shot_types, exp_pts, color=['b', 'b', 'b', 'b', 'm', 'm', 'm'])
-    # plt.xticks(rotation=30)
-    # plt.xlabel('Shot Type')
-    # plt.ylabel('Expected Points Generated')
-    # plt.title('2019-2020 League Wide \n Shot Type vs. Expected Points Generated (Not Including OREBs)')
-    # plt.tight_layout()
-    # fig.savefig('exp_pts_bar.png')
-    
     fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
     for i in range(len(ax)):
         for j in range(len(ax[0])):
@@ -332,17 +282,6 @@ def gen_bar_exp_pts(exp_pts):
 
 
 def gen_bar_exp_pts_w_orb(exp_pts_w_orb):
-    # fig = plt.figure()
-    # shot_types = exp_pts_w_orb.keys()
-    # exp_pts = exp_pts_w_orb.values()
-    # plt.bar(shot_types, exp_pts, color=['b', 'b', 'b', 'b', 'm', 'm', 'm'])
-    # plt.xticks(rotation=30)
-    # plt.xlabel('Shot Type')
-    # plt.ylabel('Expected Points Generated')
-    # plt.title('2019-2020 League Wide \n Shot Type vs. Expected Points Generated (Including OREBs)')
-    # plt.tight_layout()
-    # fig.savefig('exp_pts_w_orb_bar.png')
-
     fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
     for i in range(len(ax)):
         for j in range(len(ax[0])):
@@ -359,28 +298,29 @@ def gen_bar_exp_pts_w_orb(exp_pts_w_orb):
 
 
 def main():
-    # data_19_20 = pd.read_csv('NBA-PBP-2019-2020.csv')
-    # data_18_19 = pd.read_csv('NBA-PBP-2018-2019.csv')
-    # data_17_18 = pd.read_csv('NBA-PBP-2017-2018.csv')
-    # data_16_17 = pd.read_csv('NBA-PBP-2016-2017.csv')
-    # data = [data_19_20, data_18_19]
-    small_data_1 = pd.read_csv('small.txt')
-    small_data_2 = pd.read_csv('small2.txt')
-    small_data_3 = pd.read_csv('small3.txt')
-    small_data_4 = pd.read_csv('small4.txt')
-    data = [small_data_1, small_data_2, small_data_3, small_data_4]
+    data_19_20 = pd.read_csv('NBA-PBP-2019-2020.csv')
+    data_18_19 = pd.read_csv('NBA-PBP-2018-2019.csv')
+    data_17_18 = pd.read_csv('NBA-PBP-2017-2018.csv')
+    data_16_17 = pd.read_csv('NBA-PBP-2016-2017.csv')
+    data = [data_19_20, data_18_19, data_17_18, data_16_17]
+    # small_data_1 = pd.read_csv('small.txt')
+    # small_data_2 = pd.read_csv('small2.txt')
+    # small_data_3 = pd.read_csv('small3.txt')
+    # small_data_4 = pd.read_csv('small4.txt')
+    # data = [small_data_1, small_data_2, small_data_3, small_data_4]
     ppp_data = [calc_ppp(year) for year in data]
-    cleaned_data = [clean_data(year) for year in data]
-    shot_data = calc_shots(cleaned_data)
-    rebs_data = calc_rebs(cleaned_data)
-    exp_pts_data = calc_exp_pts(shot_data)
-    exp_pts_w_orb_data = calc_exp_pts_w_orb(shot_data, rebs_data, ppp_data)
-    gen_bar_shots_attempts(shot_data)
-    gen_bar_shot_percentages(shot_data)
-    gen_bar_orb_percentages(shot_data, rebs_data)
-    gen_bar_orbp_off_miss(shot_data, rebs_data)
-    gen_bar_exp_pts(exp_pts_data)
-    gen_bar_exp_pts_w_orb(exp_pts_w_orb_data)
+    print(ppp_data)
+    # cleaned_data = [clean_data(year) for year in data]
+    # shot_data = calc_shots(cleaned_data)
+    # rebs_data = calc_rebs(cleaned_data)
+    # exp_pts_data = calc_exp_pts(shot_data)
+    # exp_pts_w_orb_data = calc_exp_pts_w_orb(shot_data, rebs_data, ppp_data)
+    # gen_bar_shots_attempts(shot_data)
+    # gen_bar_shot_percentages(shot_data)
+    # gen_bar_orb_percentages(shot_data, rebs_data)
+    # gen_bar_orbp_off_miss(shot_data, rebs_data)
+    # gen_bar_exp_pts(exp_pts_data)
+    # gen_bar_exp_pts_w_orb(exp_pts_w_orb_data)
 
 
 if __name__ == '__main__':
